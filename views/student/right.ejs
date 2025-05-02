@@ -1,0 +1,17 @@
+<div class="right">
+    <div class="top">
+      <button id="menu-btn">
+      <span class="material-icons-sharp"> menu </span>
+      </button>
+      <div class="profile">
+        <div class="info">
+          <p>Hey, <b><%= student[0].name %></b></p>
+          <small class="text-muted">Student</small>
+        </div>
+        <div class="profile-photo">
+          <img src="/uploads/<%= student[0].photo %>" alt="">
+        </div>
+      </div>
+    </div>
+    <%- include('recentupdate.ejs') %>
+  </div>

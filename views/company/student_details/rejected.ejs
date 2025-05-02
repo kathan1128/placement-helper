@@ -1,0 +1,58 @@
+<div class="studentdetails">
+    <main>
+      <h1>Rejected Student</h1>
+      <div class="recent-orders" style="overflow: auto;">
+        <table id="unverified">
+          <thead>
+            <tr>
+              <th class="sortable" style="font-size: 18px;">ID</th>
+              <th class="sortable" style="font-size: 18px;">Name</th>
+              <th class="sortable" style="font-size: 18px;">Email</th>
+              <th class="sortable" style="font-size: 18px;">Resume</th>
+              <th class="sortable" style="font-size: 18px;">Round</th>
+              <th class="sortable" style="font-size: 18px;">Accept</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var i=0; i<rejected.length; i++) { %>
+            <tr>
+              <td><%= i+1 %></td>
+              <td><%= rejected[i].studentName %></td>
+              <td><%= rejected[i].studentEmail %></td>
+              <td><a href="/download-resume/<%= rejected[i].resume %>"><button class="detail-button">Resume</button></a></td>
+              <td><%= rejected[i].round %></td>
+              <td>
+                <!-- <form action="/accepted/" method="post">
+                  <input type="hidden" name="message" value="message" /> -->
+                  <button class="add-button" type="submit">&#10004;</button>
+                <!-- </form> -->
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+      <br><br>
+      <h1>Students Rejected The Offer</h1>
+      <div class="recent-orders" style="overflow: auto;">
+        <table id="unverified">
+          <thead>
+            <tr>
+              <th class="sortable" style="font-size: 18px;">ID</th>
+              <th class="sortable" style="font-size: 18px;">Name</th>
+              <th class="sortable" style="font-size: 18px;">Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var i=0; i<rejectedcompanies.length; i++) { %>
+            <tr>
+              <td><%= i+1 %></td>
+              <td><%= rejectedcompanies[i].studentName %></td>
+              <td><%= rejectedcompanies[i].studentEmail %></td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>

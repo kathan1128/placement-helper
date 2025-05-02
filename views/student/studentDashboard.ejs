@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+      />
+      <link href="https://cdn.jsdelivr.net/npm/tailwindcss@version/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="/css/studentDashboard1.css" />
+    <link rel="stylesheet" href="/css/studentDashboard2.css" />
+    <link rel="stylesheet" href="/css/updateform.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <%- include('headerstyle.ejs') %>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('sidebar.ejs') %>
+      <%- include('dashboard.ejs') %>
+      <%- include('update.ejs') %>
+      <%- include('feedback.ejs') %>
+      <%- include('applied.ejs') %>
+      <%- include('right.ejs') %>
+    </div>
+    <script src="js/constants/update-data2.js"></script>
+    <script src="../js/StudentDashboard.js"></script>
+    <script src="js/index.js"></script>
+    <%- include('footer.ejs') %>
+  </body>
+</html>

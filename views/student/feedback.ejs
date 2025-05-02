@@ -1,0 +1,140 @@
+<div class="feedback">
+    <main>
+      <h1>Placed In</h1>
+      <div class="recent-orders" style="overflow-y: auto; max-height: 300px; ">
+        <table id="unverified" >
+          <thead>
+            <tr>
+              <th class="sortable" style="font-size: 18px;">ID</th>
+              <th class="sortable" style="font-size: 18px;">Company Name</th>
+              <th class="sortable" style="font-size: 18px;">Email</th>
+              <th class="sortable" style="font-size: 18px;">Role</th>
+              <th class="sortable" style="font-size: 18px;">Package</th>
+              <th class="sortable" style="font-size: 18px;">Reject offer</th>
+
+            </tr>
+            <tr>
+              <th style="color: white;">1</th>
+            </tr>
+          </thead>
+        <tbody>
+            <% var x = 1 %>
+            <% for(var i=0; i<selected.length; i++){ %>
+              
+              <% if(selected[i].selected == 2) {%>
+                <tr>
+                  <td>
+                    <%= x %>
+                  </td>
+                  <td>
+                    <%= selected[i].companyName %>
+                  </td>
+                  <td>
+                    <%= selected[i].companyEmail %>
+                  </td>
+                  <td>
+                    Software Engineer
+                  </td>
+                  <td>
+                    <%= selected[i].package %>
+                  </td>
+                  <td>
+                    <form action="/rejectOffer/<%= selected[i].companyEmail %>" method="post">
+                      <button class="remove-button" type="submit">&#10008;</button>
+                    </form>
+                  </td>
+                </tr>
+                <% x = x + 1 %>
+            <% } %>
+            <% } %>
+            
+            
+          </tbody>
+        </table>
+
+      </div>
+  </main>
+  
+  <br/></br>
+  <main>
+    <h1>Selected Companies</h1>
+    <br><br>
+    <h3 style="color: red;">*Note : "if you select any company you won't be abel to chosse any other so please confirm"</h3>
+    <div class="recent-orders" style="overflow-y: auto; max-height: 300px; ">
+        <table id="unverified" >
+          <thead>
+            <tr>
+              <th class="sortable" style="font-size: 18px;">ID</th>
+              <th class="sortable" style="font-size: 18px;">Company Name</th>
+              <th class="sortable" style="font-size: 18px;">Email</th>
+              <th class="sortable" style="font-size: 18px;">Role</th>
+              <th class="sortable" style="font-size: 18px;">Package</th>
+              <th class="sortable" style="font-size: 18px;">Accept offer</th>
+              <th class="sortable" style="font-size: 18px;">Reject offer</th>
+
+            </tr>
+            <tr>
+              <th style="color: white;">1</th>
+            </tr>
+          </thead>
+        <tbody>
+            <% for(var i=0; i<selected.length; i++){ %>
+              <% var package = student[0].package*0.3 + student[0].package%>
+              <% if(selected[i].selected == 1 && selected[i].package >= package){ %>
+            <tr>
+              <td>
+                <%= i+1 %>
+              </td>
+              <td>
+                <%= selected[i].companyName %>
+              </td>
+              <td>
+                <%= selected[i].companyEmail %>
+              </td>
+              <td>
+                Software Engineer
+              </td>
+              <td>
+                <%= selected[i].package %>
+              </td>
+              <td>
+                <form action="/acceptOffer/<%= selected[i].companyEmail %>/<%= selected[i].package %>" method="post">
+                  <button class="add-button" type="submit">&#10004;</button>
+                </form>
+              </td>
+              <td>
+                <form action="/rejectOffer/<%= selected[i].companyEmail %>" method="post">
+                  <button class="remove-button" type="submit">&#10008;</button>
+                </form>
+              </td>
+            </tr>
+            <% } %>
+            <% } %>
+            
+            
+          </tbody>
+        </table>
+
+      </div>
+</main>
+
+
+<script>
+  document.getElementById('searchInput').addEventListener('input', function () {
+      const searchValue = this.value.toLowerCase();
+      const tableBody = document.getElementById('tableBody');
+      const rows = tableBody.getElementsByTagName('tr');
+
+      for (let i = 0; i < rows.length; i++) {
+          const companyName = rows[i].getElementsByTagName('td')[1].innerText.toLowerCase();
+
+          if (companyName.includes(searchValue)) {
+              rows[i].style.display = '';
+          } else {
+              rows[i].style.display = 'none';
+          }
+      }
+  });
+</script>
+
+    </div>

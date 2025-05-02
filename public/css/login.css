@@ -1,0 +1,175 @@
+/* === Google Font === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* === Reset Styles === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* === Body Styles === */
+body {
+    background: linear-gradient(135deg, #00b4d8, #0077b6);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 20px;
+}
+
+/* === Wrapper Styles === */
+.wrapper {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+/* === Logo Container === */
+.logo-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo-container img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* === Headline Styles === */
+.headline {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.headline h1 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.headline h3 {
+    color: #0077b6;
+    font-size: 20px;
+    margin-top: 0;
+}
+
+/* === Form Styles === */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #0077b6;
+    outline: none;
+}
+
+/* === Button Styles === */
+.btn {
+    background: #0077b6;
+    color: white;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #005b8c;
+}
+
+/* === Account Exist Styles === */
+.account-exist {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+.account-exist a {
+    color: #0077b6;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.account-exist a:hover {
+    text-decoration: underline;
+}
+
+/* === Fieldset Styles === */
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+legend {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0;
+    width: 100%;
+}
+
+/* === Alert Styles === */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* === Responsive Design === */
+@media (max-width: 576px) {
+    .wrapper {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    .headline h1 {
+        font-size: 24px;
+    }
+
+    .headline h3 {
+        font-size: 18px;
+    }
+} 
